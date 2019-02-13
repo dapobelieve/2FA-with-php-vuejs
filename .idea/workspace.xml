@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d62e18f7-6f1b-43ad-9ab0-d05f5858dce9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/core/handle.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/handle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/reply.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/partials/inc_banner.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/inc_banner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partials/inc_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/inc_footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/partials/inc_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/partials/inc_header.php" afterDir="false" />
-    </list>
+    <list default="true" id="d62e18f7-6f1b-43ad-9ab0-d05f5858dce9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-212">
-              <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -71,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/partials/inc_header.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-695">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -153,12 +147,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1550070183327</updated>
-      <workItem from="1550070185858" duration="1734000" />
+      <workItem from="1550070185858" duration="2013000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1734000" />
+    <option name="totallyTimeSpent" value="2013000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -169,7 +163,7 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.2786325" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.35555556" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -228,7 +222,7 @@
     <entry file="file://$PROJECT_DIR$/partials/inc_header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-695">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -252,7 +246,7 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-212">
-          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
         </state>
       </provider>
     </entry>
