@@ -9,7 +9,7 @@
 					<h1>
 						<span>Welcome <strong class="color">to</strong></span>
 						<br>
-						<strong>COVENANT MICROFINANCE BANK.</strong>
+						<strong>Crescendo BANK.</strong>
 					</h1>
 				</div>
 			</div>
