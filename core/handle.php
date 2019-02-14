@@ -131,7 +131,5 @@ if(isset($_GET['funddata'])){
   }
 }
 
-
-
 ?>
 

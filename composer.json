@@ -1,0 +1,13 @@
+{
+    "name": "believe/ben-j19",
+    "authors": [
+        {
+            "name": "dapobelieve",
+            "email": "dredsn@gmail.com"
+        }
+    ],
+    "require": {
+        "sendgrid/sendgrid": "^7.2",
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}

@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xl-12">
-				&copy; 2018 <strong>Atauba Victoria (14CG017753)</strong>. All Rights Reserved.
+				&copy; <?php date('Y')?> <strong>Ogungbangbe Oluwatobi Benjamin (S114201002)</strong>. All Rights Reserved.
 			</div>
 		</div>
 	</div>
