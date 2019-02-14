@@ -29,7 +29,7 @@
 					<ul id="responsive">
 						<li>
 							<a href="login.php#/login" class="">
-								<button class="btn btn-primary my-button" style="color: #fff;">Login</button>
+								<button class="btn my-button" style="color: #fff;">Login</button>
 							</a>
 						</li>
 

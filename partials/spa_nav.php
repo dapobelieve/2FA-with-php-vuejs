@@ -40,7 +40,7 @@
 			<div class="right-side">
 
 				<!--  User Notifications -->
-				<div class="header-widget hide-on-mobile">
+				<!-- <div class="header-widget hide-on-mobile"> -->
 
 					<!-- Notifications -->
 
@@ -48,7 +48,7 @@
 					<!-- Messages -->
 
 
-				</div>
+				<!-- </div> -->
 				<!--  User Notifications / End -->
 
 				<!-- User Menu -->
@@ -57,7 +57,7 @@
 					<!-- Messages -->
 					<div class="header-notifications user-menu">
 						<div class="header-notifications-trigger">
-							<a href="#"><div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div></a>
+							<li><a href="index.php"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
 						</div>
 
 						<!-- Dropdown -->

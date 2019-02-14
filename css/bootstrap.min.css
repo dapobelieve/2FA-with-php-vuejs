@@ -1,9 +1,9 @@
 @font-face {
 	font-family: 'Nunito';
-	src: 'fonts/Nunito-Light.ttf';
+	src: 'fontsGoogleSans-Regular.ttf';
 }
 body {
-	/*font-family: 'Nunito' !important;*/
+	font-family: 'Nunito' !important;
 }
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
