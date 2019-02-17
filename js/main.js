@@ -1,8 +1,6 @@
 Vue.component('login', {
 	template: `
 		<div>
-			<!-- Header Container / End -->
-
 			<!-- Titlebar -->
 			<div id="titlebar" class="gradient">
 				<div class="container">
@@ -154,22 +152,39 @@ Vue.component('register', {
 	`,
 	data () {
 		return {
-			fname: "Oluwatosin Jeremiah",
-			email: "jerexbambex@gmail.com",
-			phone: "07068261774",
-			pass1: "bianimex123",
-			pass2: "bianimex123",
-			ageup: "25 - 30"
+			form: {
+				fname: "Oluwatosin Jeremiah",
+				email: "jerexbambex@gmail.com",
+				phone: "07068261774",
+				pass1: "bianimex123",
+				pass2: "bianimex123",
+				ageup: "25 - 30"
+			}
 		}
 	},
 	methods: {
 		submit() {
-			alert("Done!");
-			axios({
-				method: 'post',
-				url: './core/register.php',
-				data: this.data
-			})
+
+			if(this.form.pass1 !== this.form.pass2) {
+				// you could design a fine alert for this
+				alert('Passwords dont match')
+			}
+
+
+			const register = new FormData();
+
+			register.append('name', this.form.fname);
+			register.append('email', this.form.email);
+			register.append('phone', this.form.phone);
+			register.append('pass1', this.form.pass1);
+
+			axios.post(`${baseUrl}register.php`, register)
+				.then(response => {
+					console.log(response.data)
+				})
+				.catch(error => {
+					console.log(error.response.data);
+				})
 		}
 	}
 });
@@ -237,23 +252,32 @@ Vue.component('validate', {
 		</div>
 	`
 });
-
+Vue.component('testComponent', {
+	template: `<p>testing a redirected link</p>`,
+	mounted() {
+		alert(this.$route.params.token)
+	}
+});
 const routes = [
     { path: '/login', component: 'login' },
     { path: '/register', component: 'register' },
-    { path: '/validate', component: 'validate' }
+    { path: '/validate', component: 'validate' },
+	{
+		path: '/verify-email/:token',
+		component: 'testComponent',
+		name: 'verifyEmail'
+	}
 ];
 
 const router = new VueRouter({
     routes
 });
+const projectName = `benj19`;
 
+const baseUrl = `http://localhost/${projectName}/app/`;
 
 new Vue({
 	el: "#wrapper",
 	router,
-	data: {
-		text: ''
-	}
-})
+});
 
