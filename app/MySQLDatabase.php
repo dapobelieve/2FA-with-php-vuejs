@@ -82,4 +82,21 @@ class MySQLDatabase
             die($output);
         }
     }
+
+    public function prepare()
+    {
+        //
+    }
+
+    // Check if email exists
+    public function checkIfEmailExists($email)
+    {
+        $this->openConnection()->prepare("SELECT * FROM tbl_patients WHERE email = '$email' LIMIT 1");
+        $stmt->execute([$email]);
+        $user = $stmt->fetch();
+
+        if ($user) {
+            return "Email already exist. Please use another email";
+        }
+    }
 }
