@@ -154,7 +154,7 @@ Vue.component('register', {
 		return {
 			form: {
 				fname: "Oluwatosin Jeremiah",
-				email: "jerexbambex@gmail.com",
+				email: "jerexbambex@gmail.com %&$$",
 				phone: "07068261774",
 				pass1: "bianimex123",
 				pass2: "bianimex123",

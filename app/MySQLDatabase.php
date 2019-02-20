@@ -82,4 +82,14 @@ class MySQLDatabase
             die($output);
         }
     }
+
+    public function cleanInput($arr)
+    {
+        $clean = [];
+        foreach ($arr as $key => $value) {
+            $clean[$key] = mysqli_real_escape_string($this->connection, $value);
+        }
+
+        return $clean;
+    }
 }
