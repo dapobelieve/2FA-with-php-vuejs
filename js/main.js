@@ -177,6 +177,7 @@ Vue.component('register', {
 			register.append('email', this.form.email);
 			register.append('phone', this.form.phone);
 			register.append('pass1', this.form.pass1);
+			register.append('agegrp', this.form.ageup);
 
 			axios.post(`${baseUrl}register.php`, register)
 				.then(response => {

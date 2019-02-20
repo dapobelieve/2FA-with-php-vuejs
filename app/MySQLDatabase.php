@@ -49,6 +49,11 @@ class MySQLDatabase
         return $result;
     }
 
+    /**
+     * get the result of a select query
+     * @param $result
+     * @return array|null
+     */
     public function fetchArray($result)
     {
         return mysqli_fetch_array($result);
@@ -83,6 +88,7 @@ class MySQLDatabase
         }
     }
 
+    //use this to clean all $_POST & $_GET inputs
     public function cleanInput($arr)
     {
         $clean = [];
@@ -92,4 +98,5 @@ class MySQLDatabase
 
         return $clean;
     }
+
 }
