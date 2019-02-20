@@ -11,7 +11,7 @@ header('Content-type: application/json');
 header('Access-Control-Allow-Headers: Content-Type');
 header("Access-Control-Allow-Origin: *");
 
-echo json_encode($_POST);
+// echo json_encode($_POST);
 
 $inputJSON = file_get_contents('php://input');
 $input = json_decode($inputJSON, TRUE);
@@ -21,7 +21,7 @@ if (!checkIfEmailExists($input['email'])) {
 	$name = $input['name'];
 	$email = $input['email'];
 	$mobile = $input['mobile'];
-	$pass1 = md5($input['number']);
+	$pass1 = md5($input['pass1']);
 	$agegrp = $input['agegrp'];
 
 
@@ -29,15 +29,15 @@ if (!checkIfEmailExists($input['email'])) {
 	$result['error']  = false;
 
 	if($name){
-		$result['message']  = "Posted Values => ".$name."-".$email."-".$message."-".$number;
+		$result['message']  = "Posted Values => ".$name."-".$email."-".$mobile."-".$agegrp;
 		$result['error']  = false;
 	}
 	else {
 		$result['error']  = 'Form submission failed.';
 	}
-	echo json_encode($result);
-	$query = "INSERT INTO `tbl_patients`
-						VALUES ('', '$name', '$email', '$mobile', '$pass1','$agegrp', CURRENT_TIME())";
+	$result->json_encode($result);
+	$query = "INSERT INTO 'tbl_patients'
+						VALUES ('', '$result['name']', '$result['email']', '$result['mobile']', '$result['pass1']','$result['agegrp']', CURRENT_TIME())";
 	$submit = new MySQLDatabase;
 	$post = $submit->query($query);
 	$submit->closeConnection();
