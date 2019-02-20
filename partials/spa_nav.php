@@ -11,7 +11,7 @@
 
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index.php"><img src="img/cu.png" alt=""></a>
+					<!-- <a href="index.php"><img src="img/cu.png" alt=""></a> -->
 				</div>
 
 				<!-- Main Navigation -->

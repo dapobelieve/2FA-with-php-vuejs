@@ -9,6 +9,7 @@
 
 	<body>
 		<div id="wrapper">
+<!--            mysql://b1073055943916:7d089f8a@us-cdbr-iron-east-03.cleardb.net/heroku_150175882c5c228?reconnect=true-->
 
 			<!-- header section -->
 			<?php include 'partials/spa_nav.php'; ?>

@@ -29,7 +29,8 @@
 					<ul id="responsive">
 						<li>
 							<a href="login.php#/login" class="">
-								<button class="btn my-button" style="color: #fff;">Login</button>
+								<button class="btn my-button button-sliding-icon" style="color: #fff;">Login <i class="icon-feather-arrow-right"></i></button>
+
 							</a>
 						</li>
 

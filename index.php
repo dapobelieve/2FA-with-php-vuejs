@@ -37,7 +37,6 @@
 		</div>
 
 		<?php include 'partials/inc_scripts.php'; ?>
-
 		<!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 		<script>
 		// Snackbar for user status switcher
