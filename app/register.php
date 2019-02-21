@@ -36,11 +36,12 @@ if (!checkIfEmailExists($input['email'])) {
 		$result['error']  = 'Form submission failed.';
 	}
 	$result->json_encode($result);
-	$query = "INSERT INTO 'tbl_patients'
-						VALUES ('', '$result['name']', '$result['email']', '$result['mobile']', '$result['pass1']','$result['agegrp']', CURRENT_TIME())";
+	$query = "INSERT INTO 'tbl_patients' VALUES ('', '$result[name]', '$result[email]', '$result[mobile]', '$result[pass1]','$result[agegrp]', CURRENT_TIME())";
 	$submit = new MySQLDatabase;
 	$post = $submit->query($query);
 	$submit->closeConnection();
+
+	echo $result;
 }
 
 
