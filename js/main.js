@@ -105,33 +105,33 @@ Vue.component('register', {
 							<!-- Form -->
 							<form method="post" id="register-account-form">
 								<div class="input-with-icon-left">
-									<i class="icon-material-baseline-mail-outline"></i>
-									<input type="text" class="input-text with-border" name="fname" placeholder="Abimbola Believe" required/>
+									<i class="icon-line-awesome-user-plus"></i>
+									<input type="text" class="input-text with-border" name="fname" placeholder="Abimbola Believe" required v-model="form.fname"/>
 								</div>
 
 								<div class="input-with-icon-left">
-									<i class="icon-material-baseline-mail-outline"></i>
-									<input type="email" class="input-text with-border" name="email" placeholder="Email Address" required/>
+									<i class="icon-line-awesome-envelope"></i>
+									<input type="email" class="input-text with-border" name="email" placeholder="Email Address" required v-model="form.email"/>
 								</div>
 
 								<div class="input-with-icon-left">
-									<i class="icon-material-baseline-mail-outline"></i>
-									<input type="text" class="input-text with-border" name="phone" placeholder="07068261774" required/>
+									<i class="icon-line-awesome-mobile"></i>
+									<input type="text" class="input-text with-border" name="phone" placeholder="07068261774" required v-model="form.phone"/>
 								</div>
 
 								<div class="input-with-icon-left" title="Should be at least 8 characters long" data-tippy-placement="bottom">
-									<i class="icon-material-outline-lock"></i>
-									<input type="password" class="input-text with-border" name="pass1" id="password-register" placeholder="Password" required/>
+									<i class="icon-line-awesome-lock"></i>
+									<input type="password" class="input-text with-border" name="pass1" id="password-register" placeholder="Password" required v-model="form.pass1"/>
+								</div>
+
+								<div class="input-with-icon-left">
+									<i class="icon-line-awesome-lock"></i>
+									<input type="password" class="input-text with-border" name="pass2" id="password-repeat-register" placeholder="Repeat Password" required v-model="form.pass2"/>
 								</div>
 
 								<div class="input-with-icon-left">
 									<i class="icon-material-outline-lock"></i>
-									<input type="password" class="input-text with-border" name="pass2" id="password-repeat-register" placeholder="Repeat Password" required/>
-								</div>
-
-								<div class="input-with-icon-left">
-									<i class="icon-material-outline-lock"></i>
-									<input type="text" class="input-text with-border" name="ageup" placeholder="20 - 25" required/>
+									<input type="text" class="input-text with-border" name="ageup" placeholder="20 - 25" required v-model="form.ageup"/>
 								</div>
 
 								<!-- Button -->
@@ -176,12 +176,16 @@ Vue.component('register', {
 			register.append('name', this.form.fname);
 			register.append('email', this.form.email);
 			register.append('phone', this.form.phone);
-			register.append('pass1', this.form.pass1);
-			register.append('agegrp', this.form.ageup);
+			register.append('password', this.form.pass1);
+			register.append('age', this.form.ageup);
 
 			axios.post(`${baseUrl}register.php`, register)
 				.then(response => {
-					console.log(response.data)
+				    if (response.data.status === true) {
+				        alert('All Good!!!')
+                    }else {
+                        alert(response.data.message)
+                    }
 				})
 				.catch(error => {
 					console.log(error.response.data);
