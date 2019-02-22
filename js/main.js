@@ -154,7 +154,7 @@ Vue.component('register', {
 		return {
 			form: {
 				fname: "Oluwatosin Jeremiah",
-				email: "jerexbambex@gmail.com %&$$",
+				email: "jerexbambex@gmail.com",
 				phone: "07068261774",
 				pass1: "bianimex123",
 				pass2: "bianimex123",
@@ -176,12 +176,16 @@ Vue.component('register', {
 			register.append('name', this.form.fname);
 			register.append('email', this.form.email);
 			register.append('phone', this.form.phone);
-			register.append('pass1', this.form.pass1);
-			register.append('agegrp', this.form.ageup);
+			register.append('password', this.form.pass1);
+			register.append('age', this.form.ageup);
 
 			axios.post(`${baseUrl}register.php`, register)
 				.then(response => {
-					console.log(response.data)
+				    if (response.data.status === true) {
+				        alert('All Good!!!')
+                    }else {
+                        alert(response.data.message)
+                    }
 				})
 				.catch(error => {
 					console.log(error.response.data);
