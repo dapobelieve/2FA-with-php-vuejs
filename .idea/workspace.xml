@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d62e18f7-6f1b-43ad-9ab0-d05f5858dce9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Response.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/MySQLDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MySQLDatabase.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/init.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +17,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
+            <state relative-caret-position="736">
               <caret line="183" column="37" selection-start-line="183" selection-start-column="37" selection-end-line="183" selection-end-column="37" />
               <folding>
                 <element signature="e#23#1821#0" />
@@ -32,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="322">
+              <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -44,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+            <state relative-caret-position="334">
+              <caret line="40" column="36" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="36" />
               <folding>
                 <element signature="e#6#90#0#PHP" expanded="true" />
                 <element signature="n#create#0;n#User#0;n#!!top" />
@@ -66,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/MySQLDatabase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="56" column="30" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="30" />
+            <state relative-caret-position="966">
+              <caret line="54" column="7" lean-forward="true" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
               <folding>
                 <element signature="e#6#90#0#PHP" expanded="true" />
               </folding>
@@ -131,12 +128,12 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/app/regiter.php" />
         <option value="$PROJECT_DIR$/app/table.sql" />
-        <option value="$PROJECT_DIR$/app/MySQLDatabase.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/init.php" />
-        <option value="$PROJECT_DIR$/app/register.php" />
         <option value="$PROJECT_DIR$/app/Response.php" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/app/register.php" />
+        <option value="$PROJECT_DIR$/app/MySQLDatabase.php" />
       </list>
     </option>
   </component>
@@ -217,12 +214,12 @@
       <workItem from="1550223894559" duration="5148000" />
       <workItem from="1550386163323" duration="10977000" />
       <workItem from="1550649139165" duration="7821000" />
-      <workItem from="1550819174430" duration="9166000" />
+      <workItem from="1550819174430" duration="12428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38312000" />
+    <option name="totallyTimeSpent" value="41574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-137" width="1616" height="876" extended-state="6" />
@@ -241,7 +238,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32357043" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.48256624" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -379,31 +376,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/MySQLDatabase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="56" column="30" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="30" />
-          <folding>
-            <element signature="e#6#90#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/init.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-          <folding>
-            <element signature="e#6#90#0#PHP" expanded="true" />
-            <element signature="n#create#0;n#User#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -414,20 +390,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/register.php">
+    <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="334">
+          <caret line="40" column="36" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="36" />
+          <folding>
+            <element signature="e#6#90#0#PHP" expanded="true" />
+            <element signature="n#create#0;n#User#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/MySQLDatabase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="54" column="7" lean-forward="true" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+          <folding>
+            <element signature="e#6#90#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
+        <state relative-caret-position="736">
           <caret line="183" column="37" selection-start-line="183" selection-start-column="37" selection-end-line="183" selection-end-column="37" />
           <folding>
             <element signature="e#23#1821#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
         </state>
       </provider>
     </entry>

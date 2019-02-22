@@ -37,4 +37,13 @@ class User extends MySQLDatabase
 
         return $this->numRows($result);
     }
+
+    public function checkPhoneExists($email)
+    {
+        $sql = "SELECT phone from user WHERE phone = '$email'";
+
+        $result = $this->query($sql);
+
+        return $this->numRows($result);
+    }
 }
