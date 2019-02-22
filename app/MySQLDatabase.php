@@ -49,6 +49,11 @@ class MySQLDatabase
         return $result;
     }
 
+    /**
+     * get the result of a select query
+     * @param $result
+     * @return array|null
+     */
     public function fetchArray($result)
     {
         return mysqli_fetch_array($result);
@@ -83,20 +88,15 @@ class MySQLDatabase
         }
     }
 
-    public function prepare()
+    //use this to clean all $_POST & $_GET inputs
+    public function cleanInput($arr)
     {
-        //
-    }
-
-    // Check if email exists
-    public function checkIfEmailExists($email)
-    {
-        $this->openConnection()->prepare("SELECT * FROM tbl_patients WHERE email = '$email' LIMIT 1");
-        $stmt->execute([$email]);
-        $user = $stmt->fetch();
-
-        if ($user) {
-            return "Email already exist. Please use another email";
+        $clean = [];
+        foreach ($arr as $key => $value) {
+            $clean[$key] = mysqli_real_escape_string($this->connection, $value);
         }
+
+        return $clean;
     }
+
 }

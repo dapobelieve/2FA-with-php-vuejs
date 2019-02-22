@@ -153,12 +153,12 @@ Vue.component('register', {
 	data () {
 		return {
 			form: {
-				fname: "Oluwatosin Jeremiah",
-				email: "jerexbambex@gmail.com",
-				phone: "07068261774",
-				pass1: "bianimex123",
-				pass2: "bianimex123",
-				ageup: "25 - 30"
+				fname: "",
+				email: "",
+				phone: "",
+				pass1: "",
+				pass2: "",
+				ageup: ""
 			}
 		}
 	},
