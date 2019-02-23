@@ -16,6 +16,7 @@ class User extends MySQLDatabase
 {
     public function create ($array)
     {
+        $array['password'] = md5($array['password']);
         $fields =  "`".implode("`, `", array_keys($array))."`";
 
         $values = "'".implode("',  '", array_values($array))."'";
