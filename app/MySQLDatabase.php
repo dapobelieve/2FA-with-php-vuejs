@@ -50,8 +50,6 @@ class MySQLDatabase
     }
 
 
-    mdl_scorm_scoes_track
-
     /**
      * get the result of a select query
      * @param $result

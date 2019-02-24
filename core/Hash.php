@@ -1,5 +1,5 @@
 <?php
-class TransRef
+class Hasher
 {
     /**
      * Get the pool to use based on the type of prefix hash
@@ -77,3 +77,4 @@ class TransRef
         return $token;
     }
 }
+

@@ -16,20 +16,20 @@ $user = new User;
 $cleanInput = $db->cleanInput($_POST);
 
 //check mail exits
-if ($user->checkMailExists($_POST['email']) === 1) {
-    $data = [];
-   echo  $res->respond(false, $data,'Email Address already exists on our servers');
-   die();
-}
-
-
-//check phone exits
-if ($user->checkPhoneExists($_POST['phone']) === 1) {
-    $data = [];
-    echo  $res->respond(false, $data,'Phone Number already exists on our servers');
-    die();
-}
+//if ($user->checkMailExists($_POST['email']) === 1) {
+//    $data = [];
+//   echo  $res->respond(false, $data,'Email Address already exists on our servers');
+//   die();
+//}
+//
+//
+////check phone exits
+//if ($user->checkPhoneExists($_POST['phone']) === 1) {
+//    $data = [];
+//    echo  $res->respond(false, $data,'Phone Number already exists on our servers');
+//    die();
+//}
 
 
 //create user
-//echo $user->create($_POST);
+echo $user->create($_POST);
