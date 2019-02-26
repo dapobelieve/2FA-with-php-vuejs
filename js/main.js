@@ -274,15 +274,15 @@ Vue.component('verifyComponent', {
 				</div>
 			</div>
 
-			<div class="container" v-if="!validEmail">
-				<div class="row">
+			<div class="container" v-if="!loader">
+				<div class="row" v-if="emailValid">
 					<div class="col-xl-5 offset-xl-3">
 						<div class="login-register-page">
 							<!-- Welcome Text -->
 							<div class="welcome-text">
-								<h3>Please check your phone for the validation code</h3>
+								<h3>Please check your phone for the validation token</h3>
 							</div>
-
+	
 							<!-- Form -->
 							<form method="post" id="login-form">
 								<div class="input-with-icon-left">
@@ -290,25 +290,32 @@ Vue.component('verifyComponent', {
 									<input type="text" class="input-text with-border" name="emailaddress" id="emailaddress" placeholder="Your code" required/>
 								</div>
 							</form>
-
+	
 							<!-- Button -->
 							<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Validate 
 								<i class="icon-material-outline-arrow-right-alt"></i>
 							</button>
-
+	
 						</div>
+					</div>
+				</div>
+				<div v-else class="row">
+					<div class="col-xl-5 offset-xl-3">
+						<div class="welcome-text">
+							<h3>Invalid Verification Link.</h3>
+						</div>					
 					</div>
 				</div>
 			</div>
 			
-			<div class="container" v-if="loader">
-				<div class="row">
-					<div class="col-xl-5 offset-xl-3">
-					<p>Verifying your email address</p>
-					<div class="loader"></div>
-					</div>
+			
+			<span v-else>
+				<div class="welcome-text">
+					<h3>Verifying your email address</h3>
 				</div>
-			</div>
+				<div class="loader"></div>
+			</span>
+			
 			<!-- Spacer -->
 			<div class="margin-top-70"></div>
 			<!-- Spacer / End-->
@@ -317,6 +324,7 @@ Vue.component('verifyComponent', {
 		return {
 			loader: true,
 			emailValid: false,
+			// showPhone: false,
 			validMsg: '',
 		}
 	},
@@ -334,12 +342,18 @@ Vue.component('verifyComponent', {
 
 		axios.post(`${baseUrl}verify.php`,ve)
 		.then(response => {
-			if(response.data.status === true) {
-				this.emailValid = true;
-				this.validMsg = response.data.message
-			}else {
-				this.validMsg = ''
-			}
+				setTimeout(() => {
+					if(response.data.status) {
+						localStorage.setItem('userData', response.data.data)
+						this.emailValid = true;
+						this.validMsg = response.data.message
+					}else {
+						this.validMsg = response.data.message
+					}
+
+					this.loader = false;
+				}, 5000)
+
 		})
 		.catch(error => {
 			console.log(error.response.data)
