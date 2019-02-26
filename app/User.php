@@ -62,17 +62,32 @@ class User extends MySQLDatabase
 
         $link = $_SERVER['HTTP_REFERER']."#verify-email/".$verifyHash;
 
-        $htmlContent = '<div style="width: 90%; margin-left: auto; margin-right: auto; background-color: #fff;">
-                            <p style="font-size: 24px">Hi there, you recently registered on our portal, click the link to verify your account
-                             <a href="'.$link.'">Verify my account</a></p>
-                       </div>';
+        $htmlContent = '<!DOCTYPE html5>
+                        <html lang="en">
+                            <head>
+                                <meta charset="UTF-8">
+                                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no maximum-scale=1">
+                                <title>Crescendo Bank</title>
+                            </head>
+                        
+                            <body>
+                        <div style="width: 90%; margin-left: auto; margin-right: auto; background-color: #fff;">
+                            <p>Hi there, you recently registered on our portal, click the link to verify your account
+                            </p>
+                            <a target="_blank" href='.$link.'>Verify my account</a>
+                            <p>If the link doesnt open, copy and paste the url below in your browser..</p>
+                            <pre>'.$link.'</pre>
+                       </div>
+                        </body> 
+                        </html>';
 
+        $htmlContent = stripslashes($htmlContent);
 
 
         $email = new \SendGrid\Mail\Mail();
         $email->setFrom("noreply@crescendobank.com", "Crescendo Bank");
         $email->setSubject("Email Verification ");
-        $email->addTo('dapomichaels@gmail.com', "Example User");
+        $email->addTo($result['email'], "Example User");
 
         $email->addContent("text/html", $htmlContent);
 
@@ -80,9 +95,10 @@ class User extends MySQLDatabase
 
         try {
             $response = $sendGrid->send($email);
-            print $response->statusCode() . "\n";
-            print_r($response->headers());
-            print $response->body() . "\n";
+             if($response->statusCode() === 202){
+                 return true;
+            }
+
         }catch (Exception $e) {
             echo "Caught Exception: ".$e->getMessage()." ,";
         }
