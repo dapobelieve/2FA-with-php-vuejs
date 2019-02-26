@@ -69,16 +69,39 @@ class User extends MySQLDatabase
                                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no maximum-scale=1">
                                 <title>Crescendo Bank</title>
                             </head>
-                        
+
                             <body>
                         <div style="width: 90%; margin-left: auto; margin-right: auto; background-color: #fff;">
                             <p>Hi there, you recently registered on our portal, click the link to verify your account
                             </p>
-                            <a target="_blank" href='.$link.'>Verify my account</a>
+                            <a target="_blank" href='.$link.'
+                            style="
+                                text-decoration: none;
+                                border: none;
+                                background: #02b3e4;
+                                padding: 1.2em 4em;
+                                border-radius: 4px !important;
+                                box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+                                color: #fff;
+                                cursor: pointer;
+                                display: inline-block;
+                                font-family: Open Sans, sans-serif;
+                                font-size: 12px;
+                                font-weight: 600;
+                                -webkit-font-smoothing: antialiased;
+                                letter-spacing: 0.165em;
+                                max-width: 100%;
+                                overflow: hidden;
+                                text-align: center;
+                                text-overflow: ellipsis;
+                                text-transform: uppercase;
+                                transition: 0.2s box-shadow ease-in-out, 0.2s background-color ease-in-out, 0.2s border-color ease-in-out;
+                                white-space: nowrap;"
+                            >Verify my account</a>
                             <p>If the link doesnt open, copy and paste the url below in your browser..</p>
                             <pre>'.$link.'</pre>
                        </div>
-                        </body> 
+                        </body>
                         </html>';
 
         $htmlContent = stripslashes($htmlContent);
