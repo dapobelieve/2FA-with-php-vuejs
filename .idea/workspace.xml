@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d62e18f7-6f1b-43ad-9ab0-d05f5858dce9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/verify.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="346" column="75" selection-start-line="346" selection-start-column="75" selection-end-line="346" selection-end-column="75" />
+            <state relative-caret-position="320">
+              <caret line="377" lean-forward="true" selection-start-line="377" selection-end-line="377" />
               <folding>
                 <element signature="e#23#1821#0" />
                 <element signature="n#div#0;n#!!top" />
@@ -216,12 +214,12 @@
       <workItem from="1550819174430" duration="15006000" />
       <workItem from="1550956981823" duration="32031000" />
       <workItem from="1551175829111" duration="2385000" />
-      <workItem from="1551184452107" duration="10234000" />
+      <workItem from="1551184452107" duration="10812000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88802000" />
+    <option name="totallyTimeSpent" value="89380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-137" width="1616" height="876" extended-state="6" />
@@ -452,8 +450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="346" column="75" selection-start-line="346" selection-start-column="75" selection-end-line="346" selection-end-column="75" />
+        <state relative-caret-position="320">
+          <caret line="377" lean-forward="true" selection-start-line="377" selection-end-line="377" />
           <folding>
             <element signature="e#23#1821#0" />
             <element signature="n#div#0;n#!!top" />

@@ -376,7 +376,8 @@ const router = new VueRouter({
 });
 const projectName = `benj19`;
 
-const baseUrl = `http://localhost/${projectName}/app/`;
+
+const baseUrl = `http://${window.location.hostname}/${projectName}/app/`;
 
 new Vue({
 	el: "#wrapper",
