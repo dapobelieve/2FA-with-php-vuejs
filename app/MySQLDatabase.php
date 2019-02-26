@@ -49,6 +49,7 @@ class MySQLDatabase
         return $result;
     }
 
+
     /**
      * get the result of a select query
      * @param $result

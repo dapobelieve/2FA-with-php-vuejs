@@ -15,14 +15,15 @@ class Response
      * @param array $data
      * @param String $message
      */
-    public function response($status, Array $data, $message)
+    public function respond($status, $data=[], $message)
     {
         $res = [
             'status' => $status,
             'data'   => $data,
             'message' => $message
         ];
-        return $res;
+        return json_encode($res);
     }
-
 }
+
+$res = new Response();

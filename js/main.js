@@ -106,32 +106,32 @@ Vue.component('register', {
 							<form method="post" id="register-account-form">
 								<div class="input-with-icon-left">
 									<i class="icon-material-baseline-mail-outline"></i>
-									<input type="text" class="input-text with-border" name="fname" placeholder="Abimbola Believe" required/>
+									<input type="text" class="input-text with-border" v-model="form.fname" placeholder="Abimbola Believe" required/>
 								</div>
 
 								<div class="input-with-icon-left">
 									<i class="icon-material-baseline-mail-outline"></i>
-									<input type="email" class="input-text with-border" name="email" placeholder="Email Address" required/>
+									<input type="email" class="input-text with-border" v-model="form.email" placeholder="Email Address" required/>
 								</div>
 
 								<div class="input-with-icon-left">
 									<i class="icon-material-baseline-mail-outline"></i>
-									<input type="text" class="input-text with-border" name="phone" placeholder="07068261774" required/>
+									<input type="text" class="input-text with-border" v-model="form.phone" placeholder="07068261774" required/>
 								</div>
 
 								<div class="input-with-icon-left" title="Should be at least 8 characters long" data-tippy-placement="bottom">
 									<i class="icon-material-outline-lock"></i>
-									<input type="password" class="input-text with-border" name="pass1" id="password-register" placeholder="Password" required/>
+									<input type="password" class="input-text with-border" v-model="form.pass1" id="password-register" placeholder="Password" required/>
 								</div>
 
 								<div class="input-with-icon-left">
 									<i class="icon-material-outline-lock"></i>
-									<input type="password" class="input-text with-border" name="pass2" id="password-repeat-register" placeholder="Repeat Password" required/>
+									<input type="password" class="input-text with-border" v-model="form.pass2" id="password-repeat-register" placeholder="Repeat Password" required/>
 								</div>
 
 								<div class="input-with-icon-left">
 									<i class="icon-material-outline-lock"></i>
-									<input type="text" class="input-text with-border" name="ageup" placeholder="20 - 25" required/>
+									<input type="text" class="input-text with-border" v-model="form.ageup" placeholder="20 - 25" required/>
 								</div>
 
 								<!-- Button -->
@@ -153,12 +153,12 @@ Vue.component('register', {
 	data () {
 		return {
 			form: {
-				fname: "Oluwatosin Jeremiah",
-				email: "jerexbambex@gmail.com %&$$",
-				phone: "07068261774",
-				pass1: "bianimex123",
-				pass2: "bianimex123",
-				ageup: "25 - 30"
+				fname: "",
+				email: "",
+				phone: "",
+				pass1: "",
+				pass2: "",
+				ageup: ""
 			}
 		}
 	},
@@ -176,12 +176,16 @@ Vue.component('register', {
 			register.append('name', this.form.fname);
 			register.append('email', this.form.email);
 			register.append('phone', this.form.phone);
-			register.append('pass1', this.form.pass1);
-			register.append('agegrp', this.form.ageup);
+			register.append('password', this.form.pass1);
+			register.append('age', this.form.ageup);
 
 			axios.post(`${baseUrl}register.php`, register)
 				.then(response => {
-					console.log(response.data)
+				    if (response.data.status === true) {
+				        alert('All Good!!!')
+                    }else {
+                        alert(response.data.message)
+                    }
 				})
 				.catch(error => {
 					console.log(error.response.data);
@@ -192,10 +196,6 @@ Vue.component('register', {
 Vue.component('validate', {
 	template: `
 		<div>
-			<!-- Header Container / End -->
-
-			<!-- Titlebar
-			================================================== -->
 			<div id="titlebar" class="gradient">
 				<div class="container">
 					<div class="row">
@@ -239,24 +239,111 @@ Vue.component('validate', {
 							</form>
 
 							<!-- Button -->
-							<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Validate <i class="icon-material-outline-arrow-right-alt"></i></button>
+							<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Validate <i 				class="icon-material-outline-arrow-right-alt"></i></button>
 
 						</div>
 					</div>
 				</div>
 			</div>
-
-
 			<!-- Spacer -->
 			<div class="margin-top-70"></div>
 			<!-- Spacer / End-->
 		</div>
 	`
 });
-Vue.component('testComponent', {
-	template: `<p>testing a redirected link</p>`,
+Vue.component('verifyComponent', {
+	template: `
+		<div>
+			<div id="titlebar" class="gradient">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+
+							<h2>Validation</h2>
+
+							<!-- Breadcrumbs -->
+							<nav id="breadcrumbs" class="dark">
+								<ul>
+									<li><a href="index.php">Home</a></li>
+									<li>Validate</li>
+								</ul>
+							</nav>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container" v-if="!validEmail">
+				<div class="row">
+					<div class="col-xl-5 offset-xl-3">
+						<div class="login-register-page">
+							<!-- Welcome Text -->
+							<div class="welcome-text">
+								<h3>Please check your phone for the validation code</h3>
+							</div>
+
+							<!-- Form -->
+							<form method="post" id="login-form">
+								<div class="input-with-icon-left">
+									<i class="icon-line-awesome-clipboard"></i>
+									<input type="text" class="input-text with-border" name="emailaddress" id="emailaddress" placeholder="Your code" required/>
+								</div>
+							</form>
+
+							<!-- Button -->
+							<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Validate 
+								<i class="icon-material-outline-arrow-right-alt"></i>
+							</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="container" v-if="loader">
+				<div class="row">
+					<div class="col-xl-5 offset-xl-3">
+					<p>Verifying your email address</p>
+					<div class="loader"></div>
+					</div>
+				</div>
+			</div>
+			<!-- Spacer -->
+			<div class="margin-top-70"></div>
+			<!-- Spacer / End-->
+		</div>`,
+	data () {
+		return {
+			loader: true,
+			emailValid: false,
+			validMsg: '',
+		}
+	},
+	methods: {
+		sendCode() {
+			console.log('Sending Code...');
+		}
+	},
 	mounted() {
-		alert(this.$route.params.token)
+
+		//grab token and verify email
+		let token = this.$route.params.token;
+		const ve = new FormData();
+		ve.append('val', token);
+
+		axios.post(`${baseUrl}verify.php`,ve)
+		.then(response => {
+			if(response.data.status === true) {
+				this.emailValid = true;
+				this.validMsg = response.data.message
+			}else {
+				this.validMsg = ''
+			}
+		})
+		.catch(error => {
+			console.log(error.response.data)
+		})
 	}
 });
 const routes = [
@@ -265,7 +352,7 @@ const routes = [
     { path: '/validate', component: 'validate' },
 	{
 		path: '/verify-email/:token',
-		component: 'testComponent',
+		component: 'verifyComponent',
 		name: 'verifyEmail'
 	}
 ];
@@ -281,4 +368,7 @@ new Vue({
 	el: "#wrapper",
 	router,
 });
+
+
+
 

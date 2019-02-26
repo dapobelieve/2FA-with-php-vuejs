@@ -10,42 +10,34 @@
 require_once ('init.php');
 
 $db = new MySQLDatabase();
+$user = new User;
+$data = '';
 
+//clean input
 $cleanInput = $db->cleanInput($_POST);
 
-//INSERT QUERY
-$query = "INSERT INTO user (name, email, password, phone, age)";
-$query .= "VALUES ('Dapo Michaels', 'dapo@gmail.com', 'secret', '07069494803', 29)";
-$result1 = $db->query($query);
+//check mail exits
+if ($user->checkMailExists($_POST['email']) === 1) {
+    $data = [];
+   echo  $res->respond(false, $data,'Email Address already exists on our servers');
+   die();
+}
 
 
-$sql = "SELECT * FROM user where id > 1";
-$resultSet = $db->query($sql);
-
-//USE fetchArray Method for select queries
-$user = $db->fetchArray($resultSet);
-
-
-$lastId = $db->insertId();
-
-echo "The last id inserted is: ".$lastId;
+//check phone exits
+if ($user->checkPhoneExists($_POST['phone']) === 1) {
+    $data = [];
+    echo  $res->respond(false, $data,'Phone Number already exists on our servers');
+    die();
+}
 
 
-
-/**
- * use this to count the number of rows
- * returned from a select query
- *
- * useful for checking if an email or phone
- * number exits
- */
-$numRows = $db->numRows($resultSet);
-
-echo $numRows."<br>";
-
-echo  $user['name'];
-
-
-
-
-//echo $db->fetchArray($result);
+//create user
+$response = $user->create($_POST);
+if($response) {
+    echo  $res->respond(true, $data,'Registration Successful, Please check your mail to verify your account.');
+    die();
+}else {
+    echo $res->respond(false, $data,$response);
+    die();
+}

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no maximum-scale=1">
-		<title>Login page SPA</title>
+		<title>Crescendo Bank</title>
 		<?php include 'partials/inc_head.php'; ?>
 	</head>
 
