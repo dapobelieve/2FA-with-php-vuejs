@@ -344,6 +344,7 @@ Vue.component('verifyComponent', {
 		.then(response => {
 				setTimeout(() => {
 					if(response.data.status) {
+						localStorage.setItem('userData', response.data.data)
 						this.emailValid = true;
 						this.validMsg = response.data.message
 					}else {

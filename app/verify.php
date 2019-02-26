@@ -26,6 +26,8 @@ $dUser = $db->fetchArray($result);
 
 
 if($db->numRows($result) == 1) {
+    $user = new User();
+    $user->sendToken('07036890802');
     $data = $dUser;
     echo  $res->respond(true, $data,'Email Validation Successful');
     die();
@@ -33,3 +35,6 @@ if($db->numRows($result) == 1) {
     echo $res->respond(false, $data, 'Invalid Verification Link');
     die();
 }
+
+//citieclik@gmail.com
+//citieclik01

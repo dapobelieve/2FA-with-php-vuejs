@@ -14,6 +14,9 @@ require_once  ('../core/Hash.php');
 
 class User extends MySQLDatabase
 {
+
+    private $smsUsername = 'citieclik@gmail.com';
+    private $smsPassword = 'citieclik01';
     private $apiKey = "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";
     public function create($array)
     {
@@ -121,5 +124,30 @@ class User extends MySQLDatabase
     {
         $hash = new Hasher();
         return $hash->getHashedToken();
+    }
+
+    public function sendToken($phone)
+    {
+        $code = mt_rand(10000, 99999) ."-". mt_rand(100, 999);
+        $client = new GuzzleHttp\Client();
+        $message = "Your token is ".$code;
+        $number  = $phone;
+
+        $response = $client->post('http://portal.bulksmsnigeria.net/api/?', [
+            'verify'    =>  false,
+            'form_params' => [
+                'username' => $this->smsUsername,
+                'password' => $this->smsPassword,
+                'message' => $message,
+                'sender' => 'Crescendo',
+                'mobiles' => $number
+            ],
+        ]);
+
+
+        $response = json_decode($response->getBody(), true);
+
+
+
     }
 }
