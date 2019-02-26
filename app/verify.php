@@ -13,17 +13,23 @@ $db = new MySQLDatabase();
 
 $request = $db->cleanInput($_POST);
 
+$token = $request['val'];
+
 $sql = "SELECT user.* FROM user 
-        JOIN tokens ON tokens.user_id = user.id";
+        JOIN tokens ON tokens.user_id = user.id
+        WHERE tokens.token = '$token'
+        LIMIT 1";
 
 $result = $db->query($sql);
 
 $dUser = $db->fetchArray($result);
 
-if($db->numRows($result) === 1) {
+
+if($db->numRows($result) == 1) {
+    $data = $dUser;
     echo  $res->respond(true, $data,'Email Validation Successful');
     die();
+}else {
+    echo $res->respond(false, $data, 'Invalid Verification Link');
+    die();
 }
-echo $dUser['phone'];
-
-//print_r();

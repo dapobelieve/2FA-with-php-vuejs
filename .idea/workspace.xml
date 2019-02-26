@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d62e18f7-6f1b-43ad-9ab0-d05f5858dce9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/verify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/mine.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mine.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/MySQLDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MySQLDatabase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/verify.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,14 +21,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="303" column="47" selection-start-line="303" selection-start-column="47" selection-end-line="303" selection-end-column="47" />
+            <state relative-caret-position="27">
+              <caret line="282" column="84" selection-start-line="282" selection-start-column="84" selection-end-line="282" selection-end-column="84" />
               <folding>
                 <element signature="e#23#1821#0" />
                 <element signature="n#div#0;n#!!top" />
                 <element signature="n#div#1;n#div#0;n#!!top" />
                 <element signature="n#div#0;n#div#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -39,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/verify.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="150">
+              <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -57,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
+            <state relative-caret-position="1283">
               <caret line="116" selection-start-line="116" selection-end-line="116" />
               <folding>
                 <element signature="n#checkMailExists#0;n#User#0;n#!!top" />
@@ -79,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/init.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="35" />
+            <state relative-caret-position="161">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -88,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/MySQLDatabase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1426">
-              <caret line="67" column="28" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="28" />
+            <state relative-caret-position="288">
+              <caret line="59" column="31" lean-forward="true" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
               <folding>
                 <element signature="e#6#90#0#PHP" expanded="true" />
               </folding>
@@ -119,15 +116,15 @@
         <option value="$PROJECT_DIR$/app/regiter.php" />
         <option value="$PROJECT_DIR$/app/table.sql" />
         <option value="$PROJECT_DIR$/app/Response.php" />
-        <option value="$PROJECT_DIR$/app/MySQLDatabase.php" />
         <option value="$PROJECT_DIR$/core/Hasher.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/app/init.php" />
         <option value="$PROJECT_DIR$/core/Hash.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/css/mine.css" />
         <option value="$PROJECT_DIR$/app/register.php" />
+        <option value="$PROJECT_DIR$/app/init.php" />
+        <option value="$PROJECT_DIR$/app/MySQLDatabase.php" />
         <option value="$PROJECT_DIR$/app/verify.php" />
         <option value="$PROJECT_DIR$/js/main.js" />
       </list>
@@ -218,18 +215,18 @@
       <workItem from="1550819174430" duration="15006000" />
       <workItem from="1550956981823" duration="32031000" />
       <workItem from="1551175829111" duration="2385000" />
-      <workItem from="1551184452107" duration="3102000" />
+      <workItem from="1551184452107" duration="7063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81670000" />
+    <option name="totallyTimeSpent" value="85631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-137" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14267352" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14267352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -242,7 +239,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.48212227" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18410042" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -370,23 +367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/init.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/MySQLDatabase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1426">
-          <caret line="67" column="28" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="28" />
-          <folding>
-            <element signature="e#6#90#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/mine.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2013">
@@ -404,9 +384,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
+        <state relative-caret-position="1283">
           <caret line="116" selection-start-line="116" selection-end-line="116" />
           <folding>
             <element signature="n#checkMailExists#0;n#User#0;n#!!top" />
@@ -422,23 +409,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/MySQLDatabase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="59" column="31" lean-forward="true" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+          <folding>
+            <element signature="e#6#90#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/verify.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="150">
+          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="303" column="47" selection-start-line="303" selection-start-column="47" selection-end-line="303" selection-end-column="47" />
+        <state relative-caret-position="27">
+          <caret line="282" column="84" selection-start-line="282" selection-start-column="84" selection-end-line="282" selection-end-column="84" />
           <folding>
             <element signature="e#23#1821#0" />
             <element signature="n#div#0;n#!!top" />
             <element signature="n#div#1;n#div#0;n#!!top" />
             <element signature="n#div#0;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#!!top" />
           </folding>
         </state>
       </provider>
