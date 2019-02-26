@@ -71,8 +71,9 @@ class User extends MySQLDatabase
                             </head>
 
                             <body>
-                        <div style="width: 90%; margin-left: auto; margin-right: auto; background-color: #fff;">
-                            <p>Hi there, you recently registered on our portal, click the link to verify your account
+                        <div style="width: 90%; margin-left: auto; margin-right: auto; background-color: #fff; font-family: Open Sans">
+                            <h2>Hi there</h2>
+                            <p>You recently registered on our portal, click the link to verify your account
                             </p>
                             <a target="_blank" href='.$link.'
                             style="
