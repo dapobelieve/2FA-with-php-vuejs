@@ -57,7 +57,7 @@ class MySQLDatabase
      */
     public function fetchArray($result)
     {
-        return mysqli_fetch_array($result);
+        return mysqli_fetch_assoc($result);
     }
 
     public function numRows($result)
