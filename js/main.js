@@ -237,7 +237,7 @@ Vue.component('validate', {
 									<input type="text" class="input-text with-border" name="emailaddress" id="emailaddress" placeholder="Your code" required/>
 								</div>
 							</form>
-
+							<a href="#" class="forgot-password">Resend Code</a>
 							<!-- Button -->
 							<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Validate <i 				class="icon-material-outline-arrow-right-alt"></i></button>
 
@@ -282,7 +282,7 @@ Vue.component('verifyComponent', {
 							<div class="welcome-text">
 								<h3>Please check your phone for the validation token</h3>
 							</div>
-	
+
 							<!-- Form -->
 							<form method="post" id="login-form">
 								<div class="input-with-icon-left">
@@ -290,12 +290,12 @@ Vue.component('verifyComponent', {
 									<input type="text" class="input-text with-border" name="emailaddress" id="emailaddress" placeholder="Your code" required/>
 								</div>
 							</form>
-	
+
 							<!-- Button -->
-							<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Validate 
+							<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Validate
 								<i class="icon-material-outline-arrow-right-alt"></i>
 							</button>
-	
+
 						</div>
 					</div>
 				</div>
@@ -303,19 +303,19 @@ Vue.component('verifyComponent', {
 					<div class="col-xl-5 offset-xl-3">
 						<div class="welcome-text">
 							<h3>Invalid Verification Link.</h3>
-						</div>					
+						</div>
 					</div>
 				</div>
 			</div>
-			
-			
+
+
 			<span v-else>
 				<div class="welcome-text">
 					<h3>Verifying your email address</h3>
 				</div>
 				<div class="loader"></div>
 			</span>
-			
+
 			<!-- Spacer -->
 			<div class="margin-top-70"></div>
 			<!-- Spacer / End-->
