@@ -20,6 +20,7 @@ class User extends MySQLDatabase
     private $apiKey = "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";
     public function create($array)
     {
+        $array['password'] = md5($array['password']);
         $fields =  "`".implode("`, `", array_keys($array))."`";
 
         $values = "'".implode("',  '", array_values($array))."'";

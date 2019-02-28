@@ -132,7 +132,6 @@ Vue.component('register', {
 								<div class="input-with-icon-left">
 									<i class="icon-material-outline-lock"></i>
 									<input type="text" class="input-text with-border" v-model="form.ageup" placeholder="20 - 25" required/>
-								</div>
 
 								<!-- Button -->
 								<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form" @click.prevent="submit()">Register <i class="icon-material-outline-arrow-right-alt"></i></button>
