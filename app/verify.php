@@ -27,8 +27,8 @@ $dUser = $db->fetchArray($result);
 
 if($db->numRows($result) == 1) {
     $user = new User();
-    $user->sendToken('07036890802');
-    $data = $dUser;
+    $user->sendSMSToken($dUser['id'], $dUser['phone']);
+    $data = $dUser['id'];
     echo  $res->respond(true, $data,'Email Validation Successful');
     die();
 }else {
