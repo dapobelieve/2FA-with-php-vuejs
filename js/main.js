@@ -252,8 +252,14 @@ Vue.component('validate', {
 							</form>
 
 							<!-- Button -->
-							<button @click.prevent="processToken()" class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Validate <i 				class="icon-material-outline-arrow-right-alt"></i></button>
-
+							<button 
+							@click.prevent="processToken()" 
+							class="button full-width button-sliding-icon ripple-effect margin-top-10" 
+							type="submit"
+							:disabled="btn.state"
+							form="login-form">{{ btn.text }} 
+							<i class="icon-material-outline-arrow-right-alt"></i>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -265,8 +271,23 @@ Vue.component('validate', {
 	`,
 	data () {
 		return {
-			token: ''
+			token: '',
+			btn: {
+				state: false,
+				text: 'Verify'
+			}
 		}
+	},
+	computed: {
+		// tokenAye: {
+		// 	get () {
+		// 		return this.token;
+		// 	},
+		// 	set(value) {
+		// 		if(value.length === 5)
+		// 			this.token = this.token+"-"+value;
+		// 	}
+		// }
 	},
 	methods: {
 		processToken()
@@ -275,21 +296,31 @@ Vue.component('validate', {
 				alert("Please enter token sent to your mobile number");
 			}
 
+			this.btn.state = true;
+			this.btn.text  = 'Verifying...';
+
+
 			const sv = new FormData();
 			sv.append('token', this.token);
 			sv.append('id', this.$route.params.id);
-			axios.post(`${baseUrl}register.php`, smsVerify)
+			axios.post(`${baseUrl}smsVerify.php`, sv)
 				.then(response => {
-					console.log(response.data)
+					if(response.data.status === true) {
+						// console.log(response.data.data);
+						localStorage.setItem('CUser', JSON.stringify(response.data.data));
+						alert(response.data.message)
+					}else {
+						alert(response.data.message)
+					}
+					// this.$router.replace({
+					// 	path: 'path-dashboard'
+					// })
 				})
 				.catch(error => {
 					console.log(error.response);
 				})
 			console.log(this.$route.params.id)
 		}
-	},
-	mounted() {
-		this.processToken();
 	}
 });
 Vue.component('verifyComponent', {

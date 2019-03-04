@@ -141,7 +141,7 @@ class User extends MySQLDatabase
     {
         $code = mt_rand(10000, 99999) ."-". mt_rand(100, 999);
         $sql = "INSERT INTO code (`user_id`, `code`)";
-        $sql .= "VALUES ('$userId', $code)";
+        $sql .= "VALUES ('$userId', '$code')";
 
         $this->query($sql);
         return $code;
