@@ -4,16 +4,16 @@
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-				<a><router-link to="/login" class="nav-link">Login</router-link></a>
-			</li>
-			<li class="nav-item">
-				<a><router-link to="/register" class="nav-link">Register</router-link></a>
-			</li>
-			<li class="nav-item">
-				<a><router-link to="/validate" class="nav-link">Validate</router-link></a>
-			</li>
-		</ul>
+<!--		<ul class="navbar-nav mr-auto">-->
+<!--<!--			<li class="nav-item">-->-->
+<!--<!--				<a><router-link to="/login" class="nav-link">Login</router-link></a>-->-->
+<!--<!--			</li>-->-->
+<!--<!--			<li class="nav-item">-->-->
+<!--<!--				<a><router-link to="/register" class="nav-link">Register</router-link></a>-->-->
+<!--<!--			</li>-->-->
+<!--<!--			<li class="nav-item">-->-->
+<!--<!--				<a><router-link to="/validate" class="nav-link">Validate</router-link></a>-->-->
+<!--<!--			</li>-->-->
+<!--		</ul>-->
 	</div>
 </nav>

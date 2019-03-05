@@ -17,9 +17,11 @@ class User extends MySQLDatabase
 
     private $smsUsername = 'citieclik@gmail.com';
     private $smsPassword = 'citieclik01';
-    private $apiKey = "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";
+
+
     public function create($array)
     {
+        $array['password'] = md5($array['password']);
         $fields =  "`".implode("`, `", array_keys($array))."`";
 
         $values = "'".implode("',  '", array_values($array))."'";
@@ -32,9 +34,9 @@ class User extends MySQLDatabase
         //call method to send email
         $this->sendEmailVerify($this->insertId());
 
+
         return true;
     }
-
 
     public function checkMailExists($email)
     {
@@ -110,25 +112,34 @@ class User extends MySQLDatabase
 
         $htmlContent = stripslashes($htmlContent);
 
+        //setup phpmailer here
+        $mail = new  PHPMailer\PHPMailer\PHPMailer();
 
-        $email = new \SendGrid\Mail\Mail();
-        $email->setFrom("noreply@crescendobank.com", "Crescendo Bank");
-        $email->setSubject("Email Verification ");
-        $email->addTo($result['email'], "Example User");
+        // Send mail using Gmail
+            $mail->IsSMTP(); // telling the class to use SMTP
+            $mail->SMTPAuth = true; // enable SMTP authentication
+            $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
+            $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
+            $mail->Port = 465; // set the SMTP port for the GMAIL server
+            $mail->Username = "dapomichaels@gmail.com"; // GMAIL username
+            $mail->Password = "cout<<believe"; // GMAIL password
 
-        $email->addContent("text/html", $htmlContent);
+        $mail->AddAddress($result['email']);
+        $mail->SetFrom('noreply@crescendobank.com', 'Crescendo Bank');
+        $mail->Subject = 'Email Verification';
+        $mail->isHTML(true);
+        $mail->Body    =  $htmlContent;
 
-        $sendGrid = new \SendGrid($this->apiKey);
 
         try {
-            $response = $sendGrid->send($email);
-             if($response->statusCode() === 202){
-                 return true;
-            }
-
-        }catch (Exception $e) {
-            echo "Caught Exception: ".$e->getMessage()." ,";
+            $mail->send();
+            return  true;
+        }catch  (Exception $e) {
+            return 'Caught Exception: '. $e->getMessage();
         }
+
+
+
 
     }
 
@@ -150,9 +161,19 @@ class User extends MySQLDatabase
         return $hash->getHashedToken();
     }
 
-    public function sendToken($phone)
+    private function createSmsToken($userId)
     {
         $code = mt_rand(10000, 99999) ."-". mt_rand(100, 999);
+        $sql = "INSERT INTO code (`user_id`, `code`)";
+        $sql .= "VALUES ('$userId', '$code')";
+
+        $this->query($sql);
+        return $code;
+    }
+
+    public function sendSMSToken($id, $phone)
+    {
+        $code = $this->createSmsToken($id);
         $client = new GuzzleHttp\Client();
         $message = "Your token is ".$code;
         $number  = $phone;
@@ -170,7 +191,6 @@ class User extends MySQLDatabase
 
 
         $response = json_decode($response->getBody(), true);
-
 
 
     }

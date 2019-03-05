@@ -17,16 +17,15 @@
 				<!-- Main Navigation -->
 				<nav id="navigation">
 					<ul id="responsive">
-						<li>
-							<a><router-link to="/login">Login</router-link></a>
-						</li>
-						<li>
-							<a><router-link to="/register">Register</router-link></a>
-						</li>
-						<li>
-							<a><router-link to="/validate">Validate</router-link></a>
-						</li>
-
+<!--						<li>-->
+<!--							<a><router-link to="/login">Login</router-link></a>-->
+<!--						</li>-->
+<!--						<li>-->
+<!--							<a><router-link to="/register">Register</router-link></a>-->
+<!--						</li>-->
+<!--						<li>-->
+<!--							<a><router-link to="/validate">Validate</router-link></a>-->
+<!--						</li>-->
 					</ul>
 				</nav>
 				<div class="clearfix"></div>

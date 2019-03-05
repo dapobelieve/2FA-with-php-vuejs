@@ -13,8 +13,11 @@ $db = new MySQLDatabase();
 $user = new User;
 $data = '';
 
+
 //clean input
 $cleanInput = $db->cleanInput($_POST);
+
+
 
 //check mail exits
 if ($user->checkMailExists($_POST['email']) === 1) {
