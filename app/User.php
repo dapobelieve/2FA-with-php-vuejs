@@ -160,7 +160,7 @@ class User extends MySQLDatabase
     private function createSmsToken($userId)
     {
         $code = mt_rand(10000, 99999) ."-". mt_rand(100, 999);
-        $sql = "INSERT INTO code (`user_id`, `code`)";
+        $sql = "INSERT INTO code (`user_id`, `token`)";
         $sql .= "VALUES ('$userId', '$code')";
 
         $this->query($sql);

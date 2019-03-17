@@ -356,28 +356,23 @@ Vue.component('verifyComponent', {
 							<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Validate
 								<i class="icon-material-outline-arrow-right-alt"></i>
 							</button>
-
 						</div>
-						<div v-if="emailValid">
-							<div class="welcome-text">
-								<h3>{{ validMsg }}</h3>
-								<small>A token has been sent to your mobile number.</small>
-							</div>
-						</div>
-						<div v-else>
-							<div class="col-xl-5 offset-xl-3">
-								<div class="welcome-text">
-									<h3>Invalid Verification Link.</h3>
-								</div>
-							</div>
+						<div class="welcome-text">
+							<h3>{{ validMsg }}</h3>
+							<small>A token has been sent to your mobile number.</small>
 						</div>
 					</div>
-					<h3>Invalid Verification Link.</h3>
+				</div>
+				<div v-else>
+					<div class="col-xl-5 offset-xl-3">
+						<div class="welcome-text">
+							<h3>Invalid Verification Link.</h3>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<span v-else>
+			<span v-if='loader'>
 				<div class="welcome-text">
 					<h3>Verifying your email address</h3>
 				</div>
@@ -423,7 +418,7 @@ Vue.component('verifyComponent', {
 					}
 
 					this.loader = false;
-				}, 5000)
+				}, 2000)
 
 		})
 		.catch(error => {
