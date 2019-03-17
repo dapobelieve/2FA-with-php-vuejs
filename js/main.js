@@ -298,6 +298,9 @@ Vue.component('validate', {
 						// console.log(response.data.data);
 						localStorage.setItem('CUser', JSON.stringify(response.data.data));
 						alert(response.data.message)
+						this.$router.replace({
+							path: 'profile'
+						})
 					}else {
 						alert(response.data.message)
 					}
@@ -338,25 +341,6 @@ Vue.component('verifyComponent', {
 			<div class="container" v-if="!loader">
 				<div class="row" v-if="emailValid">
 					<div class="col-xl-5 offset-xl-3">
-						<div class="login-register-page">
-							<!-- Welcome Text -->
-							<div class="welcome-text">
-								<h3>Please check your phone for the validation token</h3>
-							</div>
-
-							<!-- Form -->
-							<form method="post" id="login-form">
-								<div class="input-with-icon-left">
-									<i class="icon-line-awesome-clipboard"></i>
-									<input type="text" class="input-text with-border" name="emailaddress" id="emailaddress" placeholder="Your code" required/>
-								</div>
-							</form>
-
-							<!-- Button -->
-							<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Validate
-								<i class="icon-material-outline-arrow-right-alt"></i>
-							</button>
-						</div>
 						<div class="welcome-text">
 							<h3>{{ validMsg }}</h3>
 							<small>A token has been sent to your mobile number.</small>

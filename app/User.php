@@ -15,8 +15,8 @@ require_once  ('../core/Hash.php');
 class User extends MySQLDatabase
 {
 
-    private $smsUsername = 'citieclik@gmail.com';
-    private $smsPassword = 'citieclik01';
+    private $smsUsername = '';
+    private $smsPassword = '';
 
 
     public function create($array)
@@ -174,20 +174,18 @@ class User extends MySQLDatabase
         $message = "Your token is ".$code;
         $number  = $phone;
 
-        $response = $client->post('http://portal.bulksmsnigeria.net/api/?', [
+        $response = $client->post('http://portal.nigeriabulksms.com/api/?', [
             'verify'    =>  false,
             'form_params' => [
-                'username' => $this->smsUsername,
-                'password' => $this->smsPassword,
-                'message' => $message,
-                'sender' => 'Crescendo',
-                'mobiles' => $number
+            'username' => 'citieclik@gmail.com',
+            'password' => 'citieclik01',
+            'message' => $message,
+            'sender' => 'Crescendo',
+            'mobiles' => $number
             ],
         ]);
 
 
         $response = json_decode($response->getBody(), true);
-
-
     }
 }
