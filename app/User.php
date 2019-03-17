@@ -97,8 +97,8 @@ class User extends MySQLDatabase
             $mail->SMTPSecure = "ssl"; // sets the prefix to the servier
             $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
             $mail->Port = 465; // set the SMTP port for the GMAIL server
-            $mail->Username = "dapomichaels@gmail.com"; // GMAIL username
-            $mail->Password = "cout<<believe"; // GMAIL password
+            $mail->Username = "dredsn@gmail.com"; // GMAIL username
+            $mail->Password = "idileologodapo"; // GMAIL password
 
         $mail->AddAddress($result['email']);
         $mail->SetFrom('noreply@crescendobank.com', 'Crescendo Bank');
@@ -113,10 +113,6 @@ class User extends MySQLDatabase
         }catch  (Exception $e) {
             return 'Caught Exception: '. $e->getMessage();
         }
-
-
-
-
     }
 
     private function  createToken($id, $token)

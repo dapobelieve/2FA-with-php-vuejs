@@ -278,17 +278,6 @@ Vue.component('validate', {
 			}
 		}
 	},
-	computed: {
-		// tokenAye: {
-		// 	get () {
-		// 		return this.token;
-		// 	},
-		// 	set(value) {
-		// 		if(value.length === 5)
-		// 			this.token = this.token+"-"+value;
-		// 	}
-		// }
-	},
 	methods: {
 		processToken()
 		{
