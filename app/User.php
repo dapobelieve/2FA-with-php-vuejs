@@ -65,7 +65,7 @@ class User extends MySQLDatabase
         $sql = "SELECT email from user WHERE id = '$userId'";
         $result = $this->fetchArray($this->query($sql));
 
-        $link = "https://project-2fa.herokuapp.com/#verify-email/".$verifyHash;
+        $link = "https://project-2fa.herokuapp.com/login.php#verify-email/".$verifyHash;
 
         $htmlContent = '<!DOCTYPE html5>
                         <html lang="en">
