@@ -352,7 +352,7 @@ Vue.component('validate', {
 						localStorage.setItem('CUser', JSON.stringify(response.data.data));
 						alert(response.data.message)
 						this.$router.replace({
-							path: 'profile'
+							path: '/profile'
 						})
 					}else {
 						alert(response.data.message)
