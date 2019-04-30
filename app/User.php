@@ -122,7 +122,7 @@ class User extends MySQLDatabase
             $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
             $mail->Port = 465; // set the SMTP port for the GMAIL server
             $mail->Username = "dredsn@gmail.com"; // GMAIL username
-            $mail->Password = "idileologodapo"; // GMAIL password
+            $mail->Password = "ofjeecxszjvhzrzq"; // GMAIL password
 
         $mail->AddAddress($result['email']);
         $mail->SetFrom('noreply@crescendobank.com', 'Crescendo Bank');
