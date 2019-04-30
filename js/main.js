@@ -800,7 +800,7 @@ const router = new VueRouter({
 const projectName = `benj19`;
 
 
-const baseUrl = `http://${window.location.hostname}/${projectName}/app/`;
+const baseUrl = `https://${window.location.hostname}/${projectName}/app/`;
 
 new Vue({
 	el: "#wrapper",
