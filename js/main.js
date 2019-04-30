@@ -39,18 +39,26 @@ Vue.component('login', {
 							<form method="post" id="login-form">
 								<div class="input-with-icon-left">
 									<i class="icon-material-baseline-mail-outline"></i>
-									<input type="text" class="input-text with-border" name="emailaddress" id="emailaddress" placeholder="Email Address" required/>
+									<input type="text" class="input-text with-border" v-model='email' placeholder="Email Address" required/>
 								</div>
 
 								<div class="input-with-icon-left">
 									<i class="icon-material-outline-lock"></i>
-									<input type="password" class="input-text with-border" name="password" id="password" placeholder="Password" required/>
+									<input type="password" class="input-text with-border" v-model='password'  placeholder="Password" required/>
 								</div>
 								<!--<a href="#" class="forgot-password">Forgot Password?</a>-->
 							</form>
 
 							<!-- Button -->
-							<button class="button full-width button-sliding-icon ripple-effect margin-top-10" type="submit" form="login-form">Log In<i class="icon-material-outline-arrow-right-alt"></i></button>
+							<button
+								class="button full-width button-sliding-icon ripple-effect margin-top-10"
+								type="submit"
+								:disabled="btn.state"
+								form="login-form"
+								@click.prevent="login()">
+									{{ btn.text }}
+									<i class="icon-material-outline-arrow-right-alt"></i>
+								</button>
 
 						</div>
 					</div>
@@ -62,7 +70,52 @@ Vue.component('login', {
 			<div class="margin-top-70"></div>
 			<!-- Spacer / End-->
 		</div>
-	`
+	`,
+	data () {
+		return {
+			btn: {
+				state: false,
+				text: 'Login'
+			},
+			email: null,
+			password: null
+		}
+	},
+	methods: {
+		login () {
+			if(!this.email || !this.password) {
+				alert('All Fields Required')
+				return;
+			}
+
+			const login = new FormData()
+			login.append('email', this.email)
+			login.append('password', this.password)
+
+			this.btn.state = true;
+			this.btn.text = "Processing...";
+
+			axios.post(`${baseUrl}login.php`, login)
+			.then(response => {							
+				if(response.data.status == true) {
+					localStorage.setItem('CUser', JSON.stringify(response.data.data));
+					this.$router.replace({
+						path: 'profile'
+					})
+					
+				}else {
+					alert(response.data.message)
+					this.btn.state = false;
+					this.btn.text = 'Login';
+					// return;
+				}
+				
+			})
+			.catch(error => {
+				console.log('Some error occured')
+			})
+		}
+	}
 });
 Vue.component('register', {
 	template: `
@@ -706,12 +759,28 @@ Vue.component('profile', {
 			<div class="margin-top-15"></div>
 			<!-- Spacer / End-->
 		</div>
-	`
+	`,
+	data () {
+		return {
+
+		}
+	},
+	created() {
+		let user = localStorage.getItem('CUser')
+		if(typeof user == 'undefined'){
+			alert('You are not logged in')
+			this.$router.replace({
+				name: 'login'
+			})
+		}
+
+		
+	}
 });
 
 // app routes
 const routes = [
-    { path: '/login', component: 'login' },
+    { path: '/login', component: 'login', name: 'login' },
     { path: '/register', component: 'register' },
     { path: '/profile', component: 'profile' },
 	{
